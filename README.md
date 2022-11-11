@@ -71,3 +71,22 @@ def writeReport(self, outReport):
         self.cable_connection = False
 ```
 ### nlink_uwb_tools
+#### UWB setup
+
+Prepare **two** LinkTrack S
+![image](LinkTrack_S.jpg)
+
+Donwload the NAssistant: https://www.nooploop.com/en/download/. In my case, I use Windows system to configure UWB
+#### ttyUSB permission
+
+Check device connected
+
+`ll /dev | grep ttyUSB`
+
+If I/O issue, make sure USB permission is r/w-able.
+
+try 
+
+`sudo usermod -a -G dialout $USER`
+
+Add the user into dialout group to get permission permanently on most hosts.
