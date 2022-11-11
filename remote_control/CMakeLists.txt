@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  nlink_parser
 )
 
 ## System dependencies are found with CMake's conventions
@@ -154,8 +155,9 @@ include_directories(
 
 add_executable(joy_serialization src/joy_serialization.cpp)
 target_link_libraries(joy_serialization ${catkin_LIBRARIES})
-# add_executable(joy_deserialization src/joy_deserialization.cpp)
-# target_link_libraries(joy_deserialization ${catkin_LIBRARIES})
+add_executable(joy_deserialization src/joy_deserialization.cpp)
+target_link_libraries(joy_deserialization ${catkin_LIBRARIES})
+
 #############
 ## Install ##
 #############

@@ -17,7 +17,7 @@ void node_frame_callback(nlink_parser::LinktrackNodeframe0::ConstPtr msg)
     }
   }
   ros::serialization::IStream stream(buffer.get(), serial_size);
-  ros::serialization::Serializer<geometry_msgs::Twist>::read(stream, joy);
+  ros::serialization::Serializer<sensor_msgs::Joy>::read(stream, joy);
 
   joy_pub.publish(joy);
 }
@@ -27,6 +27,6 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "joy_deserialization");
   ros::NodeHandle nh;
   ros::Subscriber string_sub = nh.subscribe<nlink_parser::LinktrackNodeframe0>("node_frame", 10, &node_frame_callback);
-  joy_pub = nh.advertise<gsensor_msgs::Joy>("ds5_joy", 10);
+  joy_pub = nh.advertise<sensor_msgs::Joy>("ds5_joy", 10);
   ros::spin();
 }

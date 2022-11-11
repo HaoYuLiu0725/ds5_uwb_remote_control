@@ -1,0 +1,11 @@
+<launch>
+    <group ns="nlink1">
+        <node pkg="nlink_parser" type="linktrack" name="linktrack0" output="screen">
+            <param name="port_name" value="/dev/ttyUSB2" />
+            <param name="baud_rate" value="921600" />
+        </node>
+        <node pkg="remote_control" type="joy_deserialization" name="joy_deserialization" output="screen">
+            <remap from="node_frame" to="nlink_linktrack_nodeframe0"/>
+        </node>
+    </group>
+</launch>
