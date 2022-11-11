@@ -12,7 +12,7 @@ nlink_uwb_tools: https://github.com/DIT-ROBOTICS/nlink_uwb_tools
 
 Under `YOUR_WOEKSPACE/src`
 ```bash
-$ git clone --recursive https://github.com/HaoYuLiu0725/ds5_uwb_remote_control.git
+git clone --recursive https://github.com/HaoYuLiu0725/ds5_uwb_remote_control.git
 ```
 
 ## ds5_ros
@@ -41,13 +41,13 @@ sudo cp YOUR_WOEKSPACE/src/ds5_uwb_remote_control/ds5_ros/udev/99-dualsense.rule
 ```
 ### Change pydualsense.py
 
-Find pydualsense.py:
+You can use this command to find pydualsense.py:
 
 ```bash
 find . -name pydualsense.py
 ```
 
-Add attribute cable_connection in function init():
+In pydualsense.py, add attribute cable_connection in function init():
 
 ```python
 def init(self):
