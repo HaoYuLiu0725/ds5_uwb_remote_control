@@ -77,7 +77,7 @@ Prepare **two** LinkTrack S module, in DIT Robotics lab you could find 8 of it.
 
 <img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/LinkTrack_S.png" width="300" height="300">
 
-Donwload the NAssistant: https://www.nooploop.com/en/download/
+Donwload and install NAssistant: https://www.nooploop.com/en/download/
 
 In my case, I use Windows system to configure UWB
 
