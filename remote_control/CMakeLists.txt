@@ -9,6 +9,7 @@ project(remote_control)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
+  sensor_msgs
   roscpp
   rospy
   std_msgs
@@ -151,6 +152,10 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
+add_executable(joy_serialization src/joy_serialization.cpp)
+target_link_libraries(joy_serialization ${catkin_LIBRARIES})
+add_executable(joy_deserialization src/joy_deserialization.cpp)
+target_link_libraries(joy_deserialization ${catkin_LIBRARIES})
 #############
 ## Install ##
 #############
