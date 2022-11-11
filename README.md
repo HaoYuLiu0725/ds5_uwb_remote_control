@@ -104,13 +104,13 @@ catkin_make
 #### ttyUSB permission
 
 Check device connected
-
-`ll /dev | grep ttyUSB`
-
+```bash
+ll /dev | grep ttyUSB
+```
 If I/O issue, make sure USB permission is r/w-able.
 
 try 
-
-`sudo usermod -a -G dialout $USER`
-
+```bash
+sudo usermod -a -G dialout $USER
+```
 Add the user into dialout group to get permission permanently on most hosts.
