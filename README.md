@@ -75,7 +75,7 @@ def writeReport(self, outReport):
 
 Prepare **two** LinkTrack S
 
-![image](image/LinkTrack_S.png)
+<img src="/HaoYuLiu0725/ds5_uwb_remote_control/raw/main/image/LinkTrack_S.png">
 
 Donwload the NAssistant: https://www.nooploop.com/en/download/. In my case, I use Windows system to configure UWB
 #### ttyUSB permission
