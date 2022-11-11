@@ -1,6 +1,3 @@
 [submodule "ds5_ros"]
 	path = ds5_ros
 	url = https://github.com/autonohm/ds5_ros.git
-[submodule "nlink_uwb_tools"]
-	path = nlink_uwb_tools
-	url = git@github.com:DIT-ROBOTICS/nlink_uwb_tools.git
