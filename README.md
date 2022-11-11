@@ -70,8 +70,7 @@ def writeReport(self, outReport):
     except IOError:
         self.cable_connection = False
 ```
-### nlink_uwb_tools
-#### UWB setup
+### UWB setup
 
 Prepare **two** LinkTrack S module, in DIT Robotics lab you could find 8 of it.
 
@@ -80,6 +79,27 @@ Prepare **two** LinkTrack S module, in DIT Robotics lab you could find 8 of it.
 Donwload and install NAssistant: https://www.nooploop.com/en/download/
 
 In my case, I use Windows system to configure UWB
+
+### nlink_uwb_tools
+#### Install
+
+Under `YOUR_WOEKSPACE/src`
+
+```bash
+cd ds5_uwb_remote_control/nlink_uwb_tools/serial
+```
+
+Under `YOUR_WOEKSPACE/src/ds5_uwb_remote_control/nlink_uwb_tools/serial`
+```bash
+make; sudo make install
+```
+```bash
+cd ../../../..
+```
+Under `YOUR_WOEKSPACE`
+```bash
+catkin_make
+```
 
 #### ttyUSB permission
 
