@@ -12,7 +12,7 @@ nlink_uwb_tools: https://github.com/DIT-ROBOTICS/nlink_uwb_tools
 
 Under `YOUR_WOEKSPACE/src`
 ```bash
-git clone --recursive https://github.com/HaoYuLiu0725/ds5_uwb_remote_control.git
+$ git clone --recursive https://github.com/HaoYuLiu0725/ds5_uwb_remote_control.git
 ```
 
 ## ds5_ros
@@ -28,11 +28,47 @@ Install the package from [pypi](https://pypi.org/project/pydualsense/).
 pip install pydualsense
 ```
 ### Device Access
-To allow linux to access the controller, you will need to set the device permissions.
+To allow linux to access the controller, you will need to set the device permissions:
 
-add the provided UDEV rule to your rules.d folder to permanently enable this for your system:
+```bash
+sudo chmod -R 777 /dev
+```
+
+OR you can add the provided UDEV rule to your rules.d folder to permanently enable this for your system:
 
 ```bash
 sudo cp YOUR_WOEKSPACE/src/ds5_uwb_remote_control/ds5_ros/udev/99-dualsense.rules /etc/udev/rules.d
+```
+### Change pydualsense.py
+
+Find pydualsense.py:
+
+```bash
+find . -name pydualsense.py
+```
+
+Add attribute cable_connection in function init():
+
+```python
+def init(self):
+    ...
+    self.cable_connection = True
+    ...
+```
+
+Change function writeReport() in pydualsense.py to catch the IOError when controller is disconnect to the PC
+
+```python
+def writeReport(self, outReport):
+    """
+    write the report to the device
+
+    Args:
+        outReport (list): report to be written to device
+    """
+    try:
+        self.device.write(bytes(outReport))
+    except IOError:
+        self.cable_connection = False
 ```
 ## nlink_uwb_tools
