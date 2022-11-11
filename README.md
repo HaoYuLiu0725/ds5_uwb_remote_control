@@ -73,11 +73,14 @@ def writeReport(self, outReport):
 ### nlink_uwb_tools
 #### UWB setup
 
-Prepare **two** LinkTrack S
+Prepare **two** LinkTrack S module, in DIT Robotics lab you could find 8 of it.
 
-<img src="/HaoYuLiu0725/ds5_uwb_remote_control/raw/main/image/LinkTrack_S.png">
+<img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/LinkTrack_S.png" width="300" height="300">
 
-Donwload the NAssistant: https://www.nooploop.com/en/download/. In my case, I use Windows system to configure UWB
+Donwload the NAssistant: https://www.nooploop.com/en/download/
+
+In my case, I use Windows system to configure UWB
+
 #### ttyUSB permission
 
 Check device connected
