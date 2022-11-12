@@ -93,6 +93,8 @@ Under `YOUR_WOEKSPACE/src/ds5_uwb_remote_control/nlink_uwb_tools/serial`
 ```bash
 make; sudo make install
 ```
+And you need to enter your password
+
 ```bash
 cd ../../../..
 ```
