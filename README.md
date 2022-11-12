@@ -39,6 +39,10 @@ catkin_make -DCATKIN_WHITELIST_PACKAGES=""
 ```
 ## UWB setup
 
+LinkTrack Datasheet: https://ftp.nooploop.com/software/products/uwb/doc/LinkTrack_Datasheet_V2.2_zh.pdf
+
+LinkTrack Message: https://ftp.nooploop.com/software/products/uwb/doc/NLink_V1.3.pdf
+
 Prepare **two** LinkTrack S module, in DIT Robotics lab you could find 8 of it.
 
 <img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/LinkTrack_S.png" width="300" height="300">
