@@ -47,6 +47,25 @@ Donwload and install NAssistant: https://www.nooploop.com/en/download/
 
 In my case, I use Windows system to configure UWB
 
+### ttyUSB permission
+
+If you use Windows to configure UWB like me, and use virtual machine(VMware) to run Ubuntu,
+
+don't forget to unplug UWB connection and reconnect to the virtual machine
+
+Check device connected
+```bash
+ll /dev | grep ttyUSB
+```
+If I/O issue, make sure USB permission is r/w-able.
+
+try 
+```bash
+sudo usermod -a -G dialout $USER
+```
+Add the user into dialout group to get permission permanently on most hosts.
+
+
 ### ds5_ros
 #### Installing
 Install the hidapi.
@@ -104,21 +123,3 @@ def writeReport(self, outReport):
         self.cable_connection = False
 ```
 
-### nlink_uwb_tools
-#### Install
-
-
-
-#### ttyUSB permission
-
-Check device connected
-```bash
-ll /dev | grep ttyUSB
-```
-If I/O issue, make sure USB permission is r/w-able.
-
-try 
-```bash
-sudo usermod -a -G dialout $USER
-```
-Add the user into dialout group to get permission permanently on most hosts.
