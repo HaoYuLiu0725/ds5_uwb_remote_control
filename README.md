@@ -37,6 +37,16 @@ catkin_make --only-pkg-with-deps nlink_parser
 source devel/setup.bash 
 catkin_make -DCATKIN_WHITELIST_PACKAGES=""
 ```
+## UWB setup
+
+Prepare **two** LinkTrack S module, in DIT Robotics lab you could find 8 of it.
+
+<img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/LinkTrack_S.png" width="300" height="300">
+
+Donwload and install NAssistant: https://www.nooploop.com/en/download/
+
+In my case, I use Windows system to configure UWB
+
 ### ds5_ros
 #### Installing
 Install the hidapi.
@@ -93,15 +103,6 @@ def writeReport(self, outReport):
     except IOError:
         self.cable_connection = False
 ```
-### UWB setup
-
-Prepare **two** LinkTrack S module, in DIT Robotics lab you could find 8 of it.
-
-<img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/LinkTrack_S.png" width="300" height="300">
-
-Donwload and install NAssistant: https://www.nooploop.com/en/download/
-
-In my case, I use Windows system to configure UWB
 
 ### nlink_uwb_tools
 #### Install
