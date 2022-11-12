@@ -9,10 +9,11 @@ ds5_ros: https://github.com/autonohm/ds5_ros
 nlink_uwb_tools: https://github.com/DIT-ROBOTICS/nlink_uwb_tools
 
 ## Install
-
+Install as submodule:
 Under `YOUR_WOEKSPACE/src`
 ```bash
-git clone --recursive git@github.com:HaoYuLiu0725/ds5_uwb_remote_control.git
+git submodule add git@github.com:HaoYuLiu0725/ds5_uwb_remote_control.git
+git submodule update --init --recursive
 ```
 ### ds5_ros
 #### Installing
