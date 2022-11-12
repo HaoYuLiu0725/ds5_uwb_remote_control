@@ -100,7 +100,9 @@ cd ../../../..
 ```
 Under `YOUR_WOEKSPACE`
 ```bash
-catkin_make
+catkin_make --only-pkg-with-deps nlink_parser
+source devel/setup.bash 
+catkin_make -DCATKIN_WHITELIST_PACKAGES=""
 ```
 
 #### ttyUSB permission
