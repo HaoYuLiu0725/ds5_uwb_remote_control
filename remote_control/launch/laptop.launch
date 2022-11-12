@@ -1,11 +1,12 @@
 <launch>
-    <node pkg="ds5_ros" type="ds5ros_node.py" name="ds5ros_node" output="screen"/>
-
     <group ns="nlink0">
+        <node pkg="ds5_ros" type="ds5ros_node.py" name="ds5ros_node" output="screen"/>
+
         <node pkg="nlink_parser" type="linktrack" name="linktrack0" output="screen">
             <param name="port_name" value="/dev/ttyUSB0" />
             <param name="baud_rate" value="921600" />
         </node>
+        
         <node pkg="remote_control" type="joy_serialization" name="joy_serialization">
             <remap from="serialized_msg" to="nlink_linktrack_data_transmission"/>
         </node>

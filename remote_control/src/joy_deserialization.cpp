@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 {
   ros::init(argc, argv, "joy_deserialization");
   ros::NodeHandle nh;
-  ros::Subscriber string_sub = nh.subscribe<nlink_parser::LinktrackNodeframe0>("node_frame", 10, &node_frame_callback);
+  ros::Subscriber string_sub = nh.subscribe<nlink_parser::LinktrackNodeframe0>("node_frame", 100, &node_frame_callback);
   joy_pub = nh.advertise<sensor_msgs::Joy>("ds5_joy", 10);
   ros::spin();
 }
