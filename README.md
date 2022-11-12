@@ -12,7 +12,7 @@ nlink_uwb_tools: https://github.com/DIT-ROBOTICS/nlink_uwb_tools
 
 Under `YOUR_WOEKSPACE/src`
 ```bash
-git clone --recursive https://github.com/HaoYuLiu0725/ds5_uwb_remote_control.git
+git clone --recursive git@github.com:HaoYuLiu0725/ds5_uwb_remote_control.git
 ```
 ### ds5_ros
 #### Installing
