@@ -8,13 +8,34 @@ ds5_ros: https://github.com/autonohm/ds5_ros
 
 nlink_uwb_tools: https://github.com/DIT-ROBOTICS/nlink_uwb_tools
 
-## Install
+## Install (On your laptop AND your robot's computer)
 Install as submodule:
 
 Under `YOUR_WOEKSPACE/src`
 ```bash
 git submodule add git@github.com:HaoYuLiu0725/ds5_uwb_remote_control.git
 git submodule update --init --recursive
+```
+Under `YOUR_WOEKSPACE/src`
+
+```bash
+cd ds5_uwb_remote_control/nlink_uwb_tools/serial
+```
+
+Under `YOUR_WOEKSPACE/src/ds5_uwb_remote_control/nlink_uwb_tools/serial`
+```bash
+make; sudo make install
+```
+And you need to enter your password
+
+```bash
+cd ../../../..
+```
+Under `YOUR_WOEKSPACE`
+```bash
+catkin_make --only-pkg-with-deps nlink_parser
+source devel/setup.bash 
+catkin_make -DCATKIN_WHITELIST_PACKAGES=""
 ```
 ### ds5_ros
 #### Installing
@@ -85,27 +106,7 @@ In my case, I use Windows system to configure UWB
 ### nlink_uwb_tools
 #### Install
 
-Under `YOUR_WOEKSPACE/src`
 
-```bash
-cd ds5_uwb_remote_control/nlink_uwb_tools/serial
-```
-
-Under `YOUR_WOEKSPACE/src/ds5_uwb_remote_control/nlink_uwb_tools/serial`
-```bash
-make; sudo make install
-```
-And you need to enter your password
-
-```bash
-cd ../../../..
-```
-Under `YOUR_WOEKSPACE`
-```bash
-catkin_make --only-pkg-with-deps nlink_parser
-source devel/setup.bash 
-catkin_make -DCATKIN_WHITELIST_PACKAGES=""
-```
 
 #### ttyUSB permission
 
