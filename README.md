@@ -9,7 +9,7 @@ ds5_ros: https://github.com/autonohm/ds5_ros
 nlink_uwb_tools: https://github.com/DIT-ROBOTICS/nlink_uwb_tools
 
 ## Install (On your laptop AND your robot's computer)
-Install as submodule:
+Install as submodule(recommend):
 
 Under `YOUR_WOEKSPACE/src`
 ```bash
