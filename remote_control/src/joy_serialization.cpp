@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 {
   ros::init(argc, argv, "joy_serialization");
   ros::NodeHandle nh;
-  ros::Subscriber twist_sub = nh.subscribe<sensor_msgs::Joy>("joy", 10, &joy_callback);
+  ros::Subscriber joy_sub = nh.subscribe<sensor_msgs::Joy>("joy", 10, &joy_callback);
   string_pub = nh.advertise<std_msgs::String>("serialized_msg", 10);
   ros::spin();
 }
