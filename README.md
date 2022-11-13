@@ -65,6 +65,8 @@ Make sure choose correct **COM port** and **baud rate(default should be 921600)*
 
 As you connected, the interface should look like one of these two images, the left one is **anchor**, and the right one is **tag**
 
+If you want to use UWB's built-in IMU on your robot, make sure use **tag** on you car
+
 Next, click **setup** button to setup UWB
 
 <img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/anchor_and_tag.png" width="1360" height="300">
@@ -78,6 +80,8 @@ don't forget to unplug UWB connection and reconnect to the virtual machine.
 **On Raspberry Pi**, you can create serial port alias (fix USB port name):
 
 (Optional but recommend, ttyUSB depends on plug in order of USB)
+
+Under `YOUR_WOEKSPACE/src/ds5_uwb_remote_control`
 ```bash
 chmod +x ./rename_RPI_USB_ports.sh
 sudo ./rename_RPI_USB_ports.sh
