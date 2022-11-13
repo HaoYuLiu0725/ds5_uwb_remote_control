@@ -206,7 +206,7 @@ robot.launch:
 <img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/node_graph_robot.png" width="1300" height="150">
 
 ### Topic
-1\. laptop.launch:
+**1. laptop.launch:**
 
 (1) `ds5ros_node`:  
 
@@ -220,7 +220,7 @@ subscribe: `/joy`[[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html
  
 publish: `/serialized_msg`(remap it to `/nlink_linktrack_data_transmission`)[[std_msgs/String]](http://docs.ros.org/en/noetic/api/std_msgs/html/msg/String.html)
         
-2\. robot.launch:
+**2. robot.launch:**
 
 (1) `joy_deserialization`(in group`/nlink1`):
     
@@ -234,8 +234,8 @@ subscribe: `/ds5_joy`(change it to `/nlink1/ds5_joy` in param)[[sensor_msgs/Joy]
         
 publish: 
 
-`cmd_vel`[[geometry_msgs/Twist]](http://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Twist.html)
+`/cmd_vel`[[geometry_msgs/Twist]](http://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Twist.html)
 
-`arm_goal`[[geometry_msgs/Point]](http://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Point.html)
+`/arm_goal`[[geometry_msgs/Point]](http://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Point.html)
                 
-`suck`[[std_msgs/Bool]](http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Bool.html)            
+`/suck`[[std_msgs/Bool]](http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Bool.html)            
