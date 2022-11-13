@@ -59,7 +59,7 @@ In my case, I use Windows system to configure UWB
 
 Open NAssistant, and plug in your UWB, use Device Manager(裝置管理員) to check COM port of your UWB
 
-Make sure choose correct COM port and baud rate(default should be 921600), and click connect
+Make sure choose correct **COM port** and **baud rate(default should be 921600)**, and click **connect**
 
 <img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/NAssistant_connection.png" width="680" height="440">
 
