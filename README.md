@@ -60,8 +60,8 @@ In my case, I use Windows system to configure UWB
 Open NAssistant, and plug in your UWB, use Device Manager(裝置管理員) to check COM port of your UWB
 
 Make sure choose correct COM port and baud rate(default should be 921600), and click connect
-<!-- 
-<img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/NAssistant_connection.png" width="680" height="440"> -->
+
+<img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/NAssistant_connection.png" width="680" height="440">
 
 ### ttyUSB permission check
 
@@ -69,7 +69,7 @@ If you use Windows to configure UWB like me, and use virtual machine(VMware) to 
 
 don't forget to unplug UWB connection and reconnect to the virtual machine.
 
-Create serial port alias (fix USB port name):
+**On Raspberry Pi**, you can create serial port alias (fix USB port name):
 
 (Optional but recommend, ttyUSB depends on plug in order of USB)
 ```bash
@@ -79,7 +79,7 @@ sudo ./rename_RPI_USB_ports.sh
 
 Check device connected
 ```bash
-ll /dev | grep USB
+ll /dev | grep ttyUSB
 ```
 If I/O issue, make sure USB permission is r/w-able.
 
