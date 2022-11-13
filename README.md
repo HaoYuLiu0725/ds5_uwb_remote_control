@@ -63,6 +63,12 @@ Make sure choose correct **COM port** and **baud rate(default should be 921600)*
 
 <img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/NAssistant_connection.png" width="680" height="440">
 
+As you connected, the interface should look like one of these two images, the left one is **anchor**, and the right one is **tag**
+
+Next, click **setup** button to setup UWB
+
+<img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/anchor_and_tag.png" width="1360" height="300">
+
 ### ttyUSB permission check
 
 If you use Windows to configure UWB like me, and use virtual machine(VMware) to run Ubuntu,
