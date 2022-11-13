@@ -41,7 +41,7 @@ catkin_make --only-pkg-with-deps nlink_parser
 source devel/setup.bash 
 catkin_make -DCATKIN_WHITELIST_PACKAGES=""
 ```
-You can `catkin_make` again to ensure that doesn't have any problem
+You can `catkin_make` again to ensure that doesn't have any problem.
 
 ## UWB setup
 
@@ -55,27 +55,27 @@ Prepare **two** LinkTrack S module, in DIT Robotics lab you could find 8 of it.
 
 Donwload and install NAssistant: https://www.nooploop.com/en/download/
 
-In my case, I use Windows system to configure UWB
+In my case, I use Windows system to configure UWB.
 
 ### NAssistant
 
-Open NAssistant, and plug in your UWB, use Device Manager(裝置管理員) to check COM port of your UWB
+Open NAssistant, and plug in your UWB, use Device Manager(裝置管理員) to check COM port of your UWB.
 
-Make sure choose correct **COM port** and **baud rate(default should be 921600)**, and click **connect**
+Make sure choose correct **COM port** and **baud rate(default should be 921600)**, and click **connect**.
 
 <img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/NAssistant_connection.png" width="680" height="440">
 
-As you connected, the interface should look like one of these two images, the left one is **anchor**, and the right one is **tag**
+As you connected, the interface should look like one of these two images, the left one is **anchor**, and the right one is **tag**.
 
-If you want to use UWB's built-in IMU on your robot, make sure use **tag** on you car
+If you want to use UWB's built-in IMU on your robot, make sure use **tag** on you robot.
 
-Next, click **setup** button to setup UWB
+Next, click **setup** button to setup UWB.
 
 <img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/anchor_and_tag.png" width="1360" height="300">
 
-There are several things to setup: **System ID**, **System CH**, **TX Gain**, **Mode Parameters**, and **Role**
+There are several things to setup: **System ID**, **System CH**, **TX Gain**, **Mode Parameters**, and **Role**.
 
-If you want to know more detail, go to read this [datasheet](https://ftp.nooploop.com/software/products/uwb/doc/LinkTrack_Datasheet_V2.2_zh.pdf)
+If you want to know more detail, go to read this [datasheet](https://ftp.nooploop.com/software/products/uwb/doc/LinkTrack_Datasheet_V2.2_zh.pdf).
 
 <img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/UWB_setup.png" width="1360" height="250">
 
@@ -89,11 +89,11 @@ If you want to know more detail, go to read this [datasheet](https://ftp.nooploo
 
 **4. Mode Parameters:** Different Mode have different characteristic, **LP_MODE5 is recommended**, you can read [datasheet](https://ftp.nooploop.com/software/products/uwb/doc/LinkTrack_Datasheet_V2.2_zh.pdf) page 15 to know more about Mode Parameters.
 
-**5. Role:** As we are using LP_MODE5, we can use **1 anchor and 1 tag** to communicate, it is recommend to use **tag** on your robot, and use **anchor** on you laptop or fixed beacon, so we can use it for UWB localization, or use it **tag***s built-in IMU.
+**5. Role:** As we are using LP_MODE5, we can use **1 anchor and 1 tag** to communicate, it is recommend to use **tag** on your robot, and use **anchor** on you laptop or fixed beacon, so we can use it for UWB localization, or use it **tag**'s built-in IMU.
 
 **6. ID:** Please **DON'T** change UWB's ID, because it should already have it's own ID label on it's backside.
 
-**others:** NOT necessary and NOT recommend to change, so please **DON'T** change any other thing.
+**7. Others:** NOT necessary and NOT recommend to change, so please **DON'T** change any other thing.
 
 ### ttyUSB permission check
 
