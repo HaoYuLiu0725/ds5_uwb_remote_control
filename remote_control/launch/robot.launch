@@ -1,11 +1,23 @@
 <launch>
+
+    <node pkg="remote_control" type="robot_control" name="robot_control" output="screen">
+        <remap from="/ds5_joy" to="/nlink1/ds5_joy"/>
+
+        <param name="MAX_linear_speed" value="1.0"/>        <!-- [m/s] -->
+        <param name="MAX_angular_speed" value="1.2"/>       <!-- [rad/s] -->
+    </node>
+
     <group ns="nlink1">
         <node pkg="nlink_parser" type="linktrack" name="linktrack0" output="screen">
-            <param name="port_name" value="/dev/USB1" />
-            <param name="baud_rate" value="921600" />
+            <!-- Testing on laptop -->
+            <param name="port_name" value="/dev/ttyUSB1" /> 
+            <!-- Using on Raspberry Pi 4 -->
+            <!-- <param name="port_name" value="/dev/USB1"/>-->
+            <param name="baud_rate" value="921600"/>
         </node>
         <node pkg="remote_control" type="joy_deserialization" name="joy_deserialization" output="screen">
             <remap from="node_frame" to="nlink_linktrack_nodeframe0"/>
         </node>
     </group>
+
 </launch>
