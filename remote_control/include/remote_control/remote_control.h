@@ -47,9 +47,10 @@ private:
     ros::Publisher point_pub_;
     ros::Publisher suck_pub_;
 
-    sensor_msgs::Joy joy_;
+    sensor_msgs::Joy input_joy_;
     geometry_msgs::Twist output_twist_;
     geometry_msgs::Point output_point_;
+    std_msgs::Bool output_suck_;
 
     ros::Time last_time_;
     ros::Duration timeout_;
@@ -60,6 +61,9 @@ private:
     double p_frequency_;
     double p_MAX_linear_speed_;     // [m/s]
     double p_MAX_angular_speed_;    // [rad/s]
+    double p_init_arm_x;
+    double p_init_arm_y;
+    double p_init_arm_z;
 
     std::string p_joy_topic_;
     std::string p_twist_topic_;

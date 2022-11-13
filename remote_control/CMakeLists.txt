@@ -106,9 +106,9 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES remote_control
-#  CATKIN_DEPENDS geometry_msgs roscpp rospy std_msgs
+ INCLUDE_DIRS include
+ LIBRARIES remote_control
+ CATKIN_DEPENDS geometry_msgs roscpp rospy std_msgs sensor_msgs nlink_parser
 #  DEPENDS system_lib
 )
 
@@ -119,7 +119,7 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+  include
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -157,8 +157,11 @@ add_executable(joy_serialization src/joy_serialization.cpp)
 target_link_libraries(joy_serialization ${catkin_LIBRARIES})
 add_executable(joy_deserialization src/joy_deserialization.cpp)
 target_link_libraries(joy_deserialization ${catkin_LIBRARIES})
-add_executable(robot_control src/robot_control.cpp)
-target_link_libraries(robot_control ${catkin_LIBRARIES})
+
+add_library(remote_control src/remote_control.cpp)
+add_executable(remote_control_node  src/nodes/remote_control_node.cpp)
+target_link_libraries(remote_control        ${catkin_LIBRARIES})
+target_link_libraries(remote_control_node   remote_control)
 
 #############
 ## Install ##
