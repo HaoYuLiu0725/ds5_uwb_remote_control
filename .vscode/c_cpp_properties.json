@@ -1,31 +1,31 @@
 {
-  "configurations": [
-    {
-      "browse": {
-        "databaseFilename": "${default}",
-        "limitSymbolsToIncludedHeaders": false
-      },
-      "includePath": [
-        "/home/haoyu/ros_test/devel/include/**",
-        "/opt/ros/noetic/include/**",
-        "/home/haoyu/rpi4_11_ws/src/base_move/include/**",
-        "/home/haoyu/rpi4_11_ws/src/fake_odom/include/**",
-        "/home/haoyu/ros_test/src/learning_tf2/include/**",
-        "/home/haoyu/rpi4_11_ws/src/main_program/include/**",
-        "/home/haoyu/rpi4_11_ws/src/odometry/include/**",
-        "/home/haoyu/rpi4_11_ws/src/path_generation/include/**",
-        "/home/haoyu/ros_test/src/practice/include/**",
-        "/home/haoyu/test_ws/src/ds5_uwb_remote_control/remote_control/include/**",
-        "/home/haoyu/ros_test/src/test/include/**",
-        "/home/haoyu/ros_test/src/turtle_practice/include/**",
-        "/usr/include/**"
-      ],
-      "name": "ROS",
-      "intelliSenseMode": "gcc-x64",
-      "compilerPath": "/usr/bin/gcc",
-      "cStandard": "gnu11",
-      "cppStandard": "c++14"
-    }
-  ],
-  "version": 4
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "${default}",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "/home/haoyu/ros_test/devel/include/**",
+                "/opt/ros/noetic/include/**",
+                "/home/haoyu/rpi4_11_ws/src/base_move/include/**",
+                "/home/haoyu/rpi4_11_ws/src/fake_odom/include/**",
+                "/home/haoyu/ros_test/src/learning_tf2/include/**",
+                "/home/haoyu/rpi4_11_ws/src/main_program/include/**",
+                "/home/haoyu/rpi4_11_ws/src/odometry/include/**",
+                "/home/haoyu/rpi4_11_ws/src/path_generation/include/**",
+                "/home/haoyu/ros_test/src/practice/include/**",
+                "/home/haoyu/test_ws/src/ds5_uwb_remote_control/remote_control/include/**",
+                "/home/haoyu/ros_test/src/test/include/**",
+                "/home/haoyu/ros_test/src/turtle_practice/include/**",
+                "/usr/include/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++14"
+        }
+    ],
+    "version": 4
 }

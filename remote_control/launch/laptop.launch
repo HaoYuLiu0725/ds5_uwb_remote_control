@@ -1,7 +1,11 @@
 <launch>
-    <group ns="nlink0">
-        <node pkg="ds5_ros" type="ds5ros_node.py" name="ds5ros_node" output="screen"/>
 
+    <node pkg="ds5_ros" type="ds5ros_node.py" name="ds5ros_node" output="screen">
+        <remap from="/joy" to="/nlink0/joy"/>
+        <remap from="/joy/set_feedback" to="/joy_set_feedback"/>
+    </node>
+
+    <group ns="nlink0">
         <node pkg="nlink_parser" type="linktrack" name="linktrack0" output="screen">
             <param name="port_name" value="/dev/ttyUSB0" />
             <param name="baud_rate" value="921600" />
