@@ -73,7 +73,7 @@ Add the user into dialout group to get permission permanently on most hosts.
 
 
 ## ds5_ros setup (ONLY on laptop)
-#### Installing
+### Installing
 Install the hidapi.
 
 ```bash
@@ -84,7 +84,7 @@ Install the package from [pypi](https://pypi.org/project/pydualsense/).
 ```bash
 pip install pydualsense
 ```
-#### Device Access
+### Device Access
 To allow linux to access the controller, you will need to set the device permissions:
 
 ```bash
@@ -96,7 +96,7 @@ OR you can add the provided UDEV rule to your rules.d folder to permanently enab
 ```bash
 sudo cp YOUR_WOEKSPACE/src/ds5_uwb_remote_control/ds5_ros/udev/99-dualsense.rules /etc/udev/rules.d
 ```
-#### Change pydualsense.py
+### Change pydualsense.py
 
 You can use this command to find pydualsense.py:
 
