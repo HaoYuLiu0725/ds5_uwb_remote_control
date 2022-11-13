@@ -210,12 +210,30 @@ robot.launch:
 
     1. `ds5ros_node`:
     
-        subscribe: `/joy/set_feedback`(already remap it to `/joy_set_feedback`) [[sensor_msgs/JoyFeedbackArray]](http://docs.ros.org/en/api/sensor_msgs/html/msg/JoyFeedbackArray.html)
+        subscribe: `/joy/set_feedback`(remap it to `/joy_set_feedback`) [[sensor_msgs/JoyFeedbackArray]](http://docs.ros.org/en/api/sensor_msgs/html/msg/JoyFeedbackArray.html)
         
-        publish: `/joy`(already remap it to `/nlink0/joy`)[[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html)
+        publish: `/joy`(remap it to `/nlink0/joy`)[[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html)
         
     2. `joy_serialization`(in group`/nlink0`):
 
         subscribe: `/joy`[[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html)
         
-        publish: `/serialized_msg`(already remap it to `/nlink0/nlink_linktrack_data_transmission`)[[std_msgs/String]](http://docs.ros.org/en/noetic/api/std_msgs/html/msg/String.html)
+        publish: `/serialized_msg`(remap it to `/nlink_linktrack_data_transmission`)[[std_msgs/String]](http://docs.ros.org/en/noetic/api/std_msgs/html/msg/String.html)
+        
+2. robot.launch:
+
+    1. `joy_deserialization`(in group`/nlink1`):
+    
+        subscribe: `/node_frame`(remap it to `/nlink_linktrack_nodeframe0`)[[nlink_parser/LinktrackNodeframe0]]
+        
+        publish: `/ds5_joy`[[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html)
+        
+    2. `remote_control`:
+        
+        subscribe: `/ds5_joy`(change it to `/nlink1/ds5_joy` in param)[[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html)
+        
+        publish: `cmd_vel`[[geometry_msgs/Twist]](http://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Twist.html)
+        
+                `arm_goal`[[geometry_msgs/Point]](http://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Point.html)
+                
+                
