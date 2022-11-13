@@ -204,4 +204,12 @@ robot.launch:
 <img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/node_graph_robot.png" width="1300" height="150">
 
 ### Topic
+1. laptop.launch:
 
+    1. `ds5ros_node`:
+    
+        subscribe: `/joy/set_feedback`(already remap it to `/joy_set_feedback`) [[sensor_msgs/JoyFeedbackArray]](http://docs.ros.org/en/api/sensor_msgs/html/msg/JoyFeedbackArray.html)
+        
+        publish: `/joy`(already remap it to `/nlink0/joy`)[[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html)
+        
+    2. `joy_serialization`:
