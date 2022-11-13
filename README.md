@@ -53,13 +53,14 @@ Donwload and install NAssistant: https://www.nooploop.com/en/download/
 
 In my case, I use Windows system to configure UWB
 
-### ttyUSB permission
+### ttyUSB permission check
 
 If you use Windows to configure UWB like me, and use virtual machine(VMware) to run Ubuntu,
 
 don't forget to unplug UWB connection and reconnect to the virtual machine
 
 Create serial port alias (fix USB port name)
+
 (Optional but recommend, ttyUSB depends on plug in order of USB)
 ```bash
 chmod +x ./rename_RPI_USB_ports.sh
