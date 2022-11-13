@@ -72,7 +72,7 @@ sudo usermod -a -G dialout $USER
 Add the user into dialout group to get permission permanently on most hosts.
 
 
-### ds5_ros
+## ds5_ros setup (ONLY on laptop)
 #### Installing
 Install the hidapi.
 
