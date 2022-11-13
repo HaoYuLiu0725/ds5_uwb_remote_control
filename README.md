@@ -2,6 +2,8 @@
 
 Use PS5 controller and UWB system to remote control your robot 
 
+Contact me: lhjh0212531@gmail.com. If you are DIT's member, you can DM me with Slack or FB(Messenger).
+
 ### Submodule
 
 ds5_ros: https://github.com/autonohm/ds5_ros
