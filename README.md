@@ -37,6 +37,8 @@ catkin_make --only-pkg-with-deps nlink_parser
 source devel/setup.bash 
 catkin_make -DCATKIN_WHITELIST_PACKAGES=""
 ```
+You can `catkin_make` again to ensure that doesn't have any problem
+
 ## UWB setup
 
 LinkTrack Datasheet: https://ftp.nooploop.com/software/products/uwb/doc/LinkTrack_Datasheet_V2.2_zh.pdf
