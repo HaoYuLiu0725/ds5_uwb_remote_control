@@ -2,7 +2,9 @@
 
 Use PS5 controller and UWB system to remote control your robot 
 
-Contact me: lhjh0212531@gmail.com. If you are DIT's member, you can DM me with Slack or FB(Messenger).
+Contact me: lhjh0212531@gmail.com.
+
+If you are DIT's member, you can DM me with Slack or FB(Messenger).
 
 ### Submodule
 
@@ -89,7 +91,7 @@ If you want to know more detail, go to read this [datasheet](https://ftp.nooploo
 
 **4. Mode Parameters:** Different Mode have different characteristic, **LP_MODE5 is recommended**, you can read [datasheet](https://ftp.nooploop.com/software/products/uwb/doc/LinkTrack_Datasheet_V2.2_zh.pdf) page 15 to know more about Mode Parameters.
 
-**5. Role:** As we are using LP_MODE5, we can use **1 anchor and 1 tag** to communicate, it is recommend to use **tag** on your robot, and use **anchor** on you laptop or fixed beacon, so we can use it for UWB localization, or use it **tag**'s built-in IMU.
+**5. Role:** As we are using LP_MODE5, we can use **1 anchor and 1 tag** to communicate, it is recommend to use **tag** on your robot, and use **anchor** on you laptop or fixed beacon, so we can use it for UWB localization, or use it **tag**'s built-in IMU for robot.
 
 **6. ID:** Please **DON'T** change UWB's ID, because it should already have it's own ID label on it's backside.
 
@@ -212,4 +214,8 @@ robot.launch:
         
         publish: `/joy`(already remap it to `/nlink0/joy`)[[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html)
         
-    2. `joy_serialization`:
+    2. `joy_serialization`(in group`/nlink0`):
+
+        subscribe: `/joy`[[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html)
+        
+        publish: `/serialized_msg`(already remap it to `/nlink0/nlink_linktrack_data_transmission`)[[std_msgs/String]](http://docs.ros.org/en/noetic/api/std_msgs/html/msg/String.html)
