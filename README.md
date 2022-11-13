@@ -9,6 +9,7 @@ ds5_ros: https://github.com/autonohm/ds5_ros
 nlink_uwb_tools: https://github.com/DIT-ROBOTICS/nlink_uwb_tools
 
 ## Install (On your laptop AND your robot's computer)
+
 Install as submodule(recommend):
 
 Under `YOUR_WOEKSPACE/src`
@@ -16,8 +17,8 @@ Under `YOUR_WOEKSPACE/src`
 git submodule add git@github.com:HaoYuLiu0725/ds5_uwb_remote_control.git
 git submodule update --init --recursive
 ```
-Under `YOUR_WOEKSPACE/src`
 
+Under `YOUR_WOEKSPACE/src`
 ```bash
 cd ds5_uwb_remote_control/nlink_uwb_tools/serial
 ```
@@ -26,11 +27,12 @@ Under `YOUR_WOEKSPACE/src/ds5_uwb_remote_control/nlink_uwb_tools/serial`
 ```bash
 make; sudo make install
 ```
-And you need to enter your password
 
+And you need to enter your password
 ```bash
 cd ../../../..
 ```
+
 Under `YOUR_WOEKSPACE`
 ```bash
 catkin_make --only-pkg-with-deps nlink_parser
@@ -53,6 +55,14 @@ Donwload and install NAssistant: https://www.nooploop.com/en/download/
 
 In my case, I use Windows system to configure UWB
 
+### NAssistant
+
+Open NAssistant, and plug in your UWB, use Device Manager(裝置管理員) to check COM port of your UWB
+
+Make sure choose correct COM port and baud rate(default should be 921600), and click connect
+<!-- 
+<img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/NAssistant_connection.png" width="680" height="440"> -->
+
 ### ttyUSB permission check
 
 If you use Windows to configure UWB like me, and use virtual machine(VMware) to run Ubuntu,
@@ -66,6 +76,7 @@ Create serial port alias (fix USB port name):
 chmod +x ./rename_RPI_USB_ports.sh
 sudo ./rename_RPI_USB_ports.sh
 ```
+
 Check device connected
 ```bash
 ll /dev | grep USB
@@ -103,14 +114,13 @@ OR you can add the provided UDEV rule to your rules.d folder to permanently enab
 sudo cp YOUR_WOEKSPACE/src/ds5_uwb_remote_control/ds5_ros/udev/99-dualsense.rules /etc/udev/rules.d
 ```
 ### Change pydualsense.py
-
 You can use this command to find pydualsense.py:
 
 ```bash
 find . -name pydualsense.py
 ```
 
-In pydualsense.py, add attribute cable_connection in function init():
+In pydualsense.py, **add** attribute cable_connection in function init():
 
 ```python
 def init(self):
@@ -119,7 +129,7 @@ def init(self):
     ...
 ```
 
-Change function writeReport() in pydualsense.py to catch the IOError when controller is disconnect to the PC
+**Change** function writeReport() in pydualsense.py to catch the IOError when controller is disconnect to the PC
 
 ```python
 def writeReport(self, outReport):
@@ -134,4 +144,3 @@ def writeReport(self, outReport):
     except IOError:
         self.cable_connection = False
 ```
-
