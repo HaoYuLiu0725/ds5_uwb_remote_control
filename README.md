@@ -71,6 +71,28 @@ Next, click **setup** button to setup UWB
 
 <img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/anchor_and_tag.png" width="1360" height="300">
 
+There are several things to setup: **System ID**, **System CH**, **TX Gain**, **Mode Parameters**, and **Role**
+
+If you want to know more detail, go to read this [datasheet](https://ftp.nooploop.com/software/products/uwb/doc/LinkTrack_Datasheet_V2.2_zh.pdf)
+
+<img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/UWB_setup.png" width="1360" height="250">
+
+**1. System ID:** A variable to distinguish different System identities. Nodes of the same System must use same System ID. Please check other teams System ID, make sure not to conflict.
+
+(I'm using System ID 0, so please ***DON'T use System ID 0***)
+
+**2. System CH:** Nodes of the same System must use same System CH. Different channel have different Centre Frequency, Band, Bandwidth, and Encoder Mode. As we using LinkTrack S module, the 2、3、4、5、8、9 channel are better.
+
+**3. TX Gain:** Nodes of the same System must use same TX Gain. TX Gain have 0 ~ 33.5(dB) range, more TX Gain will give you more range.
+
+**4. Mode Parameters:** Different Mode have different characteristic, **LP_MODE5 is recommended**, you can read [datasheet](https://ftp.nooploop.com/software/products/uwb/doc/LinkTrack_Datasheet_V2.2_zh.pdf) page 15 to know more about Mode Parameters.
+
+**5. Role:** As we are using LP_MODE5, we can use **1 anchor and 1 tag** to communicate, it is recommend to use **tag** on your robot, and use **anchor** on you laptop or fixed beacon, so we can use it for UWB localization, or use it **tag***s built-in IMU.
+
+**6. ID:** Please **DON'T** change UWB's ID, because it should already have it's own ID label on it's backside.
+
+**others:** NOT necessary and NOT recommend to change, so please **DON'T** change any other thing.
+
 ### ttyUSB permission check
 
 If you use Windows to configure UWB like me, and use virtual machine(VMware) to run Ubuntu,
