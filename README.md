@@ -59,9 +59,15 @@ If you use Windows to configure UWB like me, and use virtual machine(VMware) to 
 
 don't forget to unplug UWB connection and reconnect to the virtual machine
 
+Create serial port alias (fix USB port name)
+(Optional but recommend, ttyUSB depends on plug in order of USB)
+```bash
+chmod +x ./rename_RPI_USB_ports.sh
+sudo ./rename_RPI_USB_ports.sh
+```
 Check device connected
 ```bash
-ll /dev | grep ttyUSB
+ll /dev | grep USB
 ```
 If I/O issue, make sure USB permission is r/w-able.
 
@@ -70,7 +76,6 @@ try
 sudo usermod -a -G dialout $USER
 ```
 Add the user into dialout group to get permission permanently on most hosts.
-
 
 ## ds5_ros setup (ONLY on laptop)
 ### Installing
