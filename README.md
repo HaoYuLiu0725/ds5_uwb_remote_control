@@ -193,4 +193,15 @@ robot.launch running nodes: remote_control, linktrack0, joy_deserialization
 ```bash
 roslaunch remote_control robot.launch
 ```
+### Node Graph
+
+laptop.launch:
+
+<img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/node_graph_laptop.png" width="1300" height="80">
+
+robot.launch:
+
+<img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/node_graph_robot.png" width="1300" height="150">
+
 ### Topic
+
