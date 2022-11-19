@@ -73,13 +73,13 @@ If you want to use UWB's built-in IMU on your robot, make sure use **tag** on yo
 
 Next, click **setup** button to setup UWB.
 
-<img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/anchor_and_tag.png" width="1200" height="300">
+<img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/anchor_and_tag.png" width="1000" height="300">
 
 There are several things to setup: **System ID**, **System CH**, **TX Gain**, **Mode Parameters**, and **Role**.
 
 If you want to know more detail, go to read this [datasheet](https://ftp.nooploop.com/software/products/uwb/doc/LinkTrack_Datasheet_V2.2_zh.pdf).
 
-<img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/UWB_setup.png" width="1200" height="250">
+<img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/UWB_setup.png" width="1000" height="250">
 
 **1. System ID:** A variable to distinguish different System identities. Nodes of the same System must use same System ID. Please check other teams System ID, make sure not to conflict.
 
