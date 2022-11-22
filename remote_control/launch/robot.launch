@@ -4,11 +4,11 @@
         <param name="active" value="true"/>
 
         <param name="frequency" value="50"/>
-        <param name="MAX_linear_speed" value="0.6"/>        <!-- [m/s] -->
-        <param name="MAX_angular_speed" value="1.2"/>       <!-- [rad/s] -->
-        <param name="init_arm_x" value="0.0"/>  <!-- need to change!!! -->
-        <param name="init_arm_y" value="0.0"/>  <!-- need to change!!! -->
-        <param name="init_arm_z" value="0.0"/>  <!-- need to change!!! -->
+        <param name="MAX_linear_speed" value="0.6"/>    <!-- [m/s] -->
+        <param name="MAX_angular_speed" value="1.2"/>   <!-- [rad/s] -->
+        <param name="init_arm_x" value="128.0"/>        <!-- [mm] -->
+        <param name="init_arm_y" value="17.0"/>         <!-- [mm] -->
+        <param name="init_arm_z" value="10.0"/>         <!-- [mm] -->
   
         <param name="joy_topic" value="/nlink1/ds5_joy"/>   <!-- Sub [sensor_msgs::Joy] -->
         <param name="twist_topic" value="/cmd_vel"/>        <!-- Pub [geometry_msgs::Twist] -->
@@ -21,7 +21,7 @@
             <!-- Testing on laptop -->
             <!-- <param name="port_name" value="/dev/ttyUSB1" />  -->
             <!-- Using on Raspberry Pi 4 -->
-            <param name="port_name" value="/dev/USB1"/>
+            <param name="port_name" value="/dev/USB0"/>
             <param name="baud_rate" value="921600"/>
         </node>
         <node pkg="remote_control" type="joy_deserialization" name="joy_deserialization" output="screen">
