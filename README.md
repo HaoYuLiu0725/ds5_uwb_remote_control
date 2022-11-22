@@ -189,7 +189,7 @@ laptop.launch running nodes: ds5ros_node, linktrack0, joy_serialization
 ```bash
 roslaunch remote_control laptop.launch
 ```
-**2. On robot:** plug in **tag UWB**, UWB default is working on USB1 (or ttyUSB1), use `ll /dev | grep USB` to check UWB connection.
+**2. On robot:** plug in **tag UWB**, UWB default is working on USB0 (or ttyUSB1), use `ll /dev | grep USB` to check UWB connection.
 
 robot.launch running nodes: remote_control, linktrack0, joy_deserialization
 ```bash
