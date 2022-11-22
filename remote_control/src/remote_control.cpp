@@ -20,11 +20,11 @@ bool RemoteControl::updateParams(std_srvs::Empty::Request& req, std_srvs::Empty:
     get_param_ok = nh_local_.param<double>("frequency", p_frequency_, 50);
     get_param_ok = nh_local_.param<double>("MAX_linear_speed", p_MAX_linear_speed_, 0.8);   // [m/s]
     get_param_ok = nh_local_.param<double>("MAX_angular_speed", p_MAX_angular_speed_, 1.0); // [rad/s]
-    get_param_ok = nh_local_.param<double>("init_arm_x", p_init_arm_x, 128.0);  // [mm]
-    get_param_ok = nh_local_.param<double>("init_arm_y", p_init_arm_y, 17.0);   // [mm]
-    get_param_ok = nh_local_.param<double>("init_arm_z", p_init_arm_z, 10.0);   // [mm]
-    get_param_ok = nh_local_.param<double>("arm_MAX_XYspeed", p_arm_MAX_XYspeed_, 1000.0);  // [mm/s]
-    get_param_ok = nh_local_.param<double>("arm_MAX_Zspeed", p_arm_MAX_Zspeed_, 1000.0);    // [mm/s]
+    get_param_ok = nh_local_.param<double>("init_arm_x", p_init_arm_x, 128.0);              // [mm]
+    get_param_ok = nh_local_.param<double>("init_arm_y", p_init_arm_y, 17.0);               // [mm]
+    get_param_ok = nh_local_.param<double>("init_arm_z", p_init_arm_z, 10.0);               // [mm]
+    get_param_ok = nh_local_.param<double>("arm_MAX_XYspeed", p_arm_MAX_XYspeed_, 100.0);   // [mm/s]
+    get_param_ok = nh_local_.param<double>("arm_MAX_Zspeed", p_arm_MAX_Zspeed_, 100.0);     // [mm/s]
 
     double timeout;
     get_param_ok = nh_local_.param<double>("timeout", timeout, 0.2);
