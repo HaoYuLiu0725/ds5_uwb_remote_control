@@ -238,4 +238,10 @@ publish:
 
 `/arm_goal`[[geometry_msgs/Point]](http://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Point.html)
                 
-`/suck`[[std_msgs/Bool]](http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Bool.html)            
+`/suck`[[std_msgs/Bool]](http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Bool.html)
+
+### Write your own controll code and launch file
+
+1. Remember subscribe to /nlink1/ds5_joy [[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html) to get PS5 controller input.
+
+2. Check [ds5_ros package's controller mapping](https://github.com/autonohm/ds5_ros/tree/e9794bee23f1b6c0af76a50014fd06c813c5132e#controler-mapping)
