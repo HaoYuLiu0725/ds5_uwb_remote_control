@@ -181,7 +181,7 @@ def writeReport(self, outReport):
         self.cable_connection = False
 ```
 ## Usage
-### Run (roslaunch)
+### Test Run (roslaunch)
 
 **1. On laptop:** plug in **anchor UWB** and your **PS5 controller**. UWB default is working on ttyUSB0, use `ll /dev | grep ttyUSB` to check UWB connection.
 
@@ -195,6 +195,10 @@ robot.launch running nodes: remote_control, linktrack0, joy_deserialization
 ```bash
 roslaunch remote_control robot.launch
 ```
+You can also use your own launch file, just add `<include file="$(find remote_control)/launch/robot.launch"/>` in your launch file.
+
+And don't forget to use rosserial to connect STM32 or Arduino.
+
 ### Node Graph
 
 laptop.launch:
@@ -240,8 +244,12 @@ publish:
                 
 `/suck`[[std_msgs/Bool]](http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Bool.html)
 
+### remote_control
+
 ### Write your own controll code and launch file
 
-1. Remember subscribe to /nlink1/ds5_joy [[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html) to get PS5 controller input.
+1. Remember subscribe to `/nlink1/ds5_joy` [[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html) to get PS5 controller input.
 
-2. Check [ds5_ros package's controller mapping](https://github.com/autonohm/ds5_ros/tree/e9794bee23f1b6c0af76a50014fd06c813c5132e#controler-mapping)
+2. Check [ds5_ros package's controller mapping](https://github.com/autonohm/ds5_ros/tree/e9794bee23f1b6c0af76a50014fd06c813c5132e#controler-mapping).
+
+3. In your launch file
