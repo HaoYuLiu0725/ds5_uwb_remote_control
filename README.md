@@ -246,6 +246,30 @@ publish:
 
 ### remote_control
 
+**1. param:**
+
+<double>
+    
+"frequency": default = 50 [Hz], timercallback loop frequency.
+
+"MAX_linear_speed": default = 0.8 [m/s], max speed of robot's linear movement (Vx & Vy).
+
+"MAX_angular_speed": default = 1.0 [rad/s], max speed of robot's angular movement (Omega).
+
+"init_arm_x", "init_arm_y", "init_arm_z": default = 128.0, 17.0, 10.0 [mm], arm's initial position.
+
+"arm_MAX_XYspeed", "arm_MAX_Zspeed": default = 100.0, 100.0 [mm/s], arm's max moving speed.
+
+<std::string>
+    
+"joy_topic": default = `/ds5_joy` [[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html)
+    
+"twist_topic": default = `/cmd_vel` [[geometry_msgs/Twist]](http://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Twist.html)
+    
+"point_topic": default = `/arm_goal` [[geometry_msgs/Point]](http://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Point.html)
+    
+"suck_topic": default = `/suck` [[std_msgs/Bool]](http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Bool.html)
+    
 ### Write your own controll code and launch file
 
 1. Remember subscribe to `/nlink1/ds5_joy` [[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html) to get PS5 controller input.
