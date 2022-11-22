@@ -23,6 +23,8 @@ bool RemoteControl::updateParams(std_srvs::Empty::Request& req, std_srvs::Empty:
     get_param_ok = nh_local_.param<double>("init_arm_x", p_init_arm_x, 128.0);  // [mm]
     get_param_ok = nh_local_.param<double>("init_arm_y", p_init_arm_y, 17.0);   // [mm]
     get_param_ok = nh_local_.param<double>("init_arm_y", p_init_arm_z, 10.0);   // [mm]
+    get_param_ok = nh_local_.param<double>("arm_MAX_XYspeed", p_arm_MAX_XYspeed_, 10.0);    // [mm/s]
+    get_param_ok = nh_local_.param<double>("arm_MAX_Zspeed", p_arm_MAX_Zspeed_, 10.0);      // [mm/s]
 
     double timeout;
     get_param_ok = nh_local_.param<double>("timeout", timeout, 0.2);
@@ -74,9 +76,12 @@ bool RemoteControl::updateParams(std_srvs::Empty::Request& req, std_srvs::Empty:
     output_twist_.linear.x = 0.0;
     output_twist_.linear.y = 0.0;
     output_twist_.angular.z = 0.0;
+
     output_point_.x = p_init_arm_x;
     output_point_.y = p_init_arm_y;
     output_point_.z = p_init_arm_z;
+
+    output_suck_.data = false;
 
     publish();
 
@@ -115,11 +120,11 @@ void RemoteControl::updatePoint(const ros::TimerEvent& e)
     double dt = (e.current_expected - e.last_expected).toSec();
 
     // Right stick, leftward (-1.0 -> 1.0, default ~0.0)
-    double dx = - input_joy_.axes[2] * dt;
+    double dx = - input_joy_.axes[2] * p_arm_MAX_XYspeed_ *  dt;
     // Right stick, upward (-1.0 -> 1.0, default ~0.0)
-    double dy = input_joy_.axes[3] * dt;
+    double dy = input_joy_.axes[3] * p_arm_MAX_XYspeed_ * dt;
     // (button up - button down)
-    double dz = (input_joy_.buttons[13] - input_joy_.buttons[14]) * dt;
+    double dz = (input_joy_.buttons[13] - input_joy_.buttons[14]) * p_arm_MAX_Zspeed_ * dt;
 
     output_point_.x += dx;
     output_point_.y += dy;

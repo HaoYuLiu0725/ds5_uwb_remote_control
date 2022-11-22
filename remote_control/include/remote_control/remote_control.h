@@ -64,6 +64,8 @@ private:
     double p_init_arm_x;
     double p_init_arm_y;
     double p_init_arm_z;
+    double p_arm_MAX_XYspeed_;      // [mm/s]
+    double p_arm_MAX_Zspeed_;       // [mm/s]
 
     std::string p_joy_topic_;
     std::string p_twist_topic_;
