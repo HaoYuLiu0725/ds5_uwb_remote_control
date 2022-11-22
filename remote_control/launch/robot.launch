@@ -9,8 +9,8 @@
         <param name="init_arm_x" value="128.0"/>        <!-- [mm] -->
         <param name="init_arm_y" value="17.0"/>         <!-- [mm] -->
         <param name="init_arm_z" value="10.0"/>         <!-- [mm] -->
-        <param name="arm_MAX_XYspeed" value="10.0"/>    <!-- [mm/s] -->
-        <param name="arm_MAX_XYspeed" value="5.0"/>     <!-- [mm/s] -->
+        <param name="arm_MAX_XYspeed" value="1000.0"/>  <!-- [mm/s] -->
+        <param name="arm_MAX_XYspeed" value="1000.0"/>  <!-- [mm/s] -->
   
         <param name="joy_topic" value="/nlink1/ds5_joy"/>   <!-- Sub [sensor_msgs::Joy] -->
         <param name="twist_topic" value="/cmd_vel"/>        <!-- Pub [geometry_msgs::Twist] -->
