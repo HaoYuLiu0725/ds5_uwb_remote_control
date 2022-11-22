@@ -248,7 +248,7 @@ publish:
 
 **1. param:**
 
-<double>
+[double]
     
 "frequency": default = 50 [Hz], timercallback loop frequency.
 
@@ -260,7 +260,7 @@ publish:
 
 "arm_MAX_XYspeed", "arm_MAX_Zspeed": default = 100.0, 100.0 [mm/s], arm's max moving speed.
 
-<std::string>
+[std::string]
     
 "joy_topic": default = `/ds5_joy` [[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html)
     
