@@ -11,6 +11,8 @@
 #include <geometry_msgs/Point.h>
 #include <std_msgs/Bool.h>
 
+#define SATURATION(amt, low, high) ((amt) < (low) ? (low) : ((amt) > (high) ? (high) : (amt)))
+
 namespace remote_control
 {
 class RemoteControl
@@ -61,11 +63,17 @@ private:
     double p_frequency_;
     double p_MAX_linear_speed_;     // [m/s]
     double p_MAX_angular_speed_;    // [rad/s]
-    double p_init_arm_x;
-    double p_init_arm_y;
-    double p_init_arm_z;
+    double p_init_arm_x;            // [mm]
+    double p_init_arm_y;            // [mm]
+    double p_init_arm_z;            // [mm]
     double p_arm_MAX_XYspeed_;      // [mm/s]
     double p_arm_MAX_Zspeed_;       // [mm/s]
+    double p_X_max_;                // [mm]
+    double p_X_min_;                // [mm]
+    double p_Y_max_;                // [mm]
+    double p_Y_min_;                // [mm]
+    double p_Z_max_;                // [mm]
+    double p_Z_min_;                // [mm]
 
     std::string p_joy_topic_;
     std::string p_twist_topic_;

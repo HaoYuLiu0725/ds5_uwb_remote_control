@@ -25,6 +25,12 @@ bool RemoteControl::updateParams(std_srvs::Empty::Request& req, std_srvs::Empty:
     get_param_ok = nh_local_.param<double>("init_arm_z", p_init_arm_z, 10.0);               // [mm]
     get_param_ok = nh_local_.param<double>("arm_MAX_XYspeed", p_arm_MAX_XYspeed_, 100.0);   // [mm/s]
     get_param_ok = nh_local_.param<double>("arm_MAX_Zspeed", p_arm_MAX_Zspeed_, 100.0);     // [mm/s]
+    get_param_ok = nh_local_.param<double>("X_max", p_X_max_, 516.0);                       // [mm]
+    get_param_ok = nh_local_.param<double>("X_min", p_X_min_, -281.0);                      // [mm]
+    get_param_ok = nh_local_.param<double>("Y_max", p_Y_max_, 516.0);                       // [mm]
+    get_param_ok = nh_local_.param<double>("Y_min", p_Y_min_, -516.0);                      // [mm]
+    get_param_ok = nh_local_.param<double>("Z_max", p_Z_max_, 119.0);                       // [mm]
+    get_param_ok = nh_local_.param<double>("Z_min", p_Z_min_, -58.0);                       // [mm]
 
     double timeout;
     get_param_ok = nh_local_.param<double>("timeout", timeout, 0.2);
@@ -129,6 +135,11 @@ void RemoteControl::updatePoint(const ros::TimerEvent& e)
     output_point_.x += dx;
     output_point_.y += dy;
     output_point_.z += dz;
+
+    output_point_.x = SATURATION(output_point_.x, p_X_min_, p_X_max_);
+    output_point_.y = SATURATION(output_point_.y, p_Y_min_, p_Y_max_);
+    output_point_.z = SATURATION(output_point_.z, p_Z_min_, p_Z_max_);
+
 }
 
 void RemoteControl::updateBool()

@@ -11,7 +11,13 @@
         <param name="init_arm_z" value="10.0"/>         <!-- [mm] -->
         <param name="arm_MAX_XYspeed" value="100.0"/>   <!-- [mm/s] -->
         <param name="arm_MAX_Zspeed" value="100.0"/>    <!-- [mm/s] -->
-  
+        <param name="X_max" value="516.0"/>             <!-- [mm] -->
+        <param name="X_min" value="-281.0"/>            <!-- [mm] -->
+        <param name="Y_max" value="516.0"/>             <!-- [mm] -->
+        <param name="Y_min" value="-516.0"/>            <!-- [mm] -->
+        <param name="Z_max" value="119.0"/>             <!-- [mm] -->
+        <param name="Z_min" value="-58.0"/>             <!-- [mm] -->
+
         <param name="joy_topic" value="/nlink1/ds5_joy"/>   <!-- Sub [sensor_msgs::Joy] -->
         <param name="twist_topic" value="/cmd_vel"/>        <!-- Pub [geometry_msgs::Twist] -->
         <param name="point_topic" value="/arm_goal"/>       <!-- Pub [geometry_msgs::Point] -->
