@@ -271,7 +271,11 @@ publish:
 "point_topic": default = `/arm_goal` [[geometry_msgs/Point]](http://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Point.html)
     
 "suck_topic": default = `/suck` [[std_msgs/Bool]](http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Bool.html)
-    
+
+**2. Controller config:**
+
+<img src="https://github.com/HaoYuLiu0725/ds5_uwb_remote_control/blob/main/image/control_config.png" width="800" height="600">
+
 ### Write your own controll code and launch file
 
 1. Remember subscribe to `/nlink1/ds5_joy` [[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html) to get PS5 controller input.
