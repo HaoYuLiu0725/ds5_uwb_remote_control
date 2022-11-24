@@ -282,4 +282,18 @@ publish:
 
 2. Check [ds5_ros controller mapping](https://github.com/autonohm/ds5_ros/tree/e9794bee23f1b6c0af76a50014fd06c813c5132e#controler-mapping).
 
-3. Rember to add `<include file="$(find remote_control)/launch/robot.launch"/>` in your launch file. And don't forget to use rosserial to connect STM32 or Arduino.
+3. Rember to add the following code in your launch file. And don't forget to use rosserial to connect STM32 or Arduino.
+```xml
+<group ns="nlink1">
+    <node pkg="nlink_parser" type="linktrack" name="linktrack0" output="screen">
+        <!-- Testing on laptop -->
+        <!-- <param name="port_name" value="/dev/ttyUSB1" />  -->
+        <!-- Using on Raspberry Pi 4 -->
+        <param name="port_name" value="/dev/USB0"/>
+        <param name="baud_rate" value="921600"/>
+    </node>
+    <node pkg="remote_control" type="joy_deserialization" name="joy_deserialization" output="screen">
+        <remap from="node_frame" to="nlink_linktrack_nodeframe0"/>
+    </node>
+</group>
+```
