@@ -260,6 +260,8 @@ publish:
 
 "arm_MAX_XYspeed", "arm_MAX_Zspeed": default = 100.0, 100.0 [mm/s], arm's max moving speed.
 
+"X_max", "X_min", "Y_max", "Y_min", "Z_max", "Z_min": default = 516.0, -281.0, 516.0, -516.0, 119.0, -58.0 [mm], arm's movement limitation.
+
 [std::string]
     
 "joy_topic": default = `/ds5_joy` [[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html)
@@ -274,6 +276,6 @@ publish:
 
 1. Remember subscribe to `/nlink1/ds5_joy` [[sensor_msgs/Joy]](http://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html) to get PS5 controller input.
 
-2. Check [ds5_ros package's controller mapping](https://github.com/autonohm/ds5_ros/tree/e9794bee23f1b6c0af76a50014fd06c813c5132e#controler-mapping).
+2. Check [ds5_ros controller mapping](https://github.com/autonohm/ds5_ros/tree/e9794bee23f1b6c0af76a50014fd06c813c5132e#controler-mapping).
 
-3. In your launch file
+3. Rember to add `<include file="$(find remote_control)/launch/robot.launch"/>` in your launch file. And don't forget to use rosserial to connect STM32 or Arduino.
